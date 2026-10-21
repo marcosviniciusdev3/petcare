@@ -1,0 +1,4 @@
+- Agent write a few unit tests & push to the remote repository
+- Tests are reviewed & ajusted
+- Now agent cannot modify any previous tests. Agent write implementation
+- Implementation is tested again & cannot have being modified
