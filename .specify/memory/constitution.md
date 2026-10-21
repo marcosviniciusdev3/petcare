@@ -1,50 +1,40 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: 1.0.0 → 1.1.0
+- Modified principles: Adapted general Spec Kit principles to PetCare domain requirements (Full-Stack TypeScript safety, Domain-Driven Modules, TDD with Vitest/Playwright, Customer & Staff operational integrity)
+- Added sections: PetCare Architectural Standards, Quality & Testing Gates
+- Removed sections: None
+- Follow-up TODOs: None
+-->
+
+# PetCare Project Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Full-Stack TypeScript & Type Safety
+The platform MUST maintain end-to-end type safety using TypeScript across the Next.js frontend, API routes, and database models (Prisma/Drizzle). Shared interfaces and schemas prevent runtime contract drift between client and server layers.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Domain-Driven Modular Architecture
+Code must be organized into clear domain modules (`appointments`, `pets`, `services`, `auth`) rather than flat monolithic structures. Each module encapsulates its business logic, UI components, and data access, ensuring maintainability and clear boundaries between customer portal and staff operations.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-Driven Development (TDD) & Comprehensive Testing
+All features, API endpoints, and UI workflows MUST follow strict TDD principles using Vitest/Jest for unit/integration tests and Playwright for end-to-end user journeys. Tests must be written and approved to fail before implementation.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Data Privacy & Pet Record Integrity
+Patient health notes, vaccination records, owner contact details, and sensitive operational data must be handled securely with strict validation, role-based access control, and adherence to privacy best practices.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Simplicity, Performance & Accessibility
+Interfaces must be clean, responsive, and mobile-friendly using Tailwind CSS and accessible component design. Prioritize simplicity, avoid premature optimization, and adhere to YAGNI principles in all feature developments.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Architectural & Technical Standards
+- **Framework**: React / Next.js (App Router) with server-side rendering and client interactivity.
+- **Database**: Relational data modeling via PostgreSQL and Prisma ORM with strict migration discipline.
+- **Quality Gates**: Automated test suites (`npm run test`), type-checking (`npm run type-check`), and linting (`npm run lint`) must pass successfully before any change is merged.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow & Governance
+All development activities must follow the structured Research -> Strategy -> Execution lifecycle, with iterative Plan -> Act -> Validate cycles. Code reviews and quality gates must verify adherence to project standards and constitution principles before merging.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution supersedes all other conflicting practices, guidelines, or ad-hoc conventions. Amendments require explicit documentation, version incrementing, and review. Compliance with these principles is mandatory for all pull requests and code reviews.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.1.0 | **Ratified**: 2026-10-21 | **Last Amended**: 2026-10-21
