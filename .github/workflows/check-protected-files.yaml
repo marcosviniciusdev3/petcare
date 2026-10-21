@@ -23,7 +23,7 @@ jobs:
         uses: tj-actions/changed-files@1254cca6ac8b9c3047ba83a11b20c9dd8d9b0572
         with:
           files: |
-            package-lock.json
+            ./git/hooks/*
 
       - name: Fail if protected files changed
         if: steps.changed-files.outputs.any_changed == 'true'
